@@ -1,7 +1,7 @@
 {
-  "name": "productivity-project-server",
+  "name": "music-4-you-server",
   "version": "1.0.0",
-  "description": "Server for productivity project",
+  "description": "Server for Music 4 You",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
