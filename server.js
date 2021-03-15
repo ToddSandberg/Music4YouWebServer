@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-var routes = require('./api/routes/tasksRoutes'); //importing route
+var routes = require('./api/routes/songsRoutes'); //importing route
 routes(app); //register the route
 
 app.use(function(req, res) {
