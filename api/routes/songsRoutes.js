@@ -1,13 +1,13 @@
 'use strict';
 module.exports = function(app) {
-  var todoList = require('../controllers/songsController');
+  var songsController = require('../controllers/songsController');
+  var loginApp = require('../controllers/loginController');
 
   app.route('/saveSongs')
-    .put(todoList.saveSongs);
-
+    .put(songsController.saveSongs);
 
   app.route('/getSongs')
-    .get(todoList.getSongs);
+    .get(songsController.getSongs);
 
   app.route('/login')
     .put(loginApp.login);
