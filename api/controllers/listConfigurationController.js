@@ -25,5 +25,5 @@ exports.getListConfiguration = function(req, res) {
 	const listConfigurationContent = fs.readFileSync(listConfigurationFileName, 'utf8');
 	console.log('Got list configurations:' + listConfigurationContent);
 	const listConfigurations = JSON.parse(listConfigurationContent);
-	res.send({ listConfiguration: listConfiguration[req.body.id] });
+	res.send({ listConfiguration: listConfigurations[req.body.id] });
 };

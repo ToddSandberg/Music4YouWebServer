@@ -1,1 +1,1 @@
-{"5":{"id":5,"name":"list nameg","members":[{"id":1,"name":"todd"},{"id":2,"name":"taylor"},{"id":3,"name":"alex"},{"id":4,"name":"sneh"},{"id":5,"name":"grant"},{"id":6,"name":"emma"},{"id":7,"name":"tanner"}],"songsRemovedPerWeek":3,"songsPerPerson":6}}
+{"5":{"id":5,"name":"list nameg","members":[{"id":2,"name":"taylor"},{"id":3,"name":"alex"},{"id":4,"name":"sneh"},{"id":5,"name":"grant"},{"id":6,"name":"emma"},{"id":7,"name":"tanner"},{"id":1,"name":"todd","color":"#408140"}],"songsRemovedPerWeek":3,"songsPerPerson":6}}
