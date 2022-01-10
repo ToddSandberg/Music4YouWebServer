@@ -2,11 +2,13 @@
 
 const fs = require('fs');
 
-const listConfigurationFileName = 'listConfiguration';
+const listConfigurationFileName = 'listConfigurations';
 
 exports.saveListConfiguration = function(req, res) {
-	console.log(req.body);
-	const listConfigurationString = JSON.stringify(req.body);
+	const id = JSON.stringify(req.body.id);
+	const allListConfigurations = JSON.parse(fs.readFileSync(listConfigurationFileName, 'utf8'));
+	allListConfigurations[id] = req.body.listConfiguration;
+	const listConfigurationString = JSON.stringify(allListConfigurations);
 	fs.writeFile(listConfigurationFileName, listConfigurationString, (err) => {
 	  if (err) {
 	    console.log(err); 
@@ -19,9 +21,9 @@ exports.saveListConfiguration = function(req, res) {
 
 
 exports.getListConfiguration = function(req, res) {
-	console.log('Getting songs...');
+	console.log('Getting list configurations...');
 	const listConfigurationContent = fs.readFileSync(listConfigurationFileName, 'utf8');
-	console.log('Got songs:' + listConfigurationContent);
-	const songs = JSON.parse(listConfigurationContent);
-	res.send({ listConfiguration: listConfiguration });
+	console.log('Got list configurations:' + listConfigurationContent);
+	const listConfigurations = JSON.parse(listConfigurationContent);
+	res.send({ listConfiguration: listConfiguration[req.body.id] });
 };
