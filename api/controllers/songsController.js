@@ -6,6 +6,9 @@ const songsFileName = 'songs';
 
 exports.saveSongs = function(req, res) {
 	console.log(req.body);
+	const id = JSON.stringify(req.body.id);
+	const allSongs = JSON.parse(fs.readFileSync(songsFileName, 'utf8'));
+	allSongs[id] = req.body.songs;
 	const songString = JSON.stringify(req.body);
 	fs.writeFile(songsFileName, songString, (err) => {
 	  if (err) {
@@ -23,5 +26,7 @@ exports.getSongs = function(req, res) {
 	const songContent = fs.readFileSync(songsFileName, 'utf8');
 	console.log('Got songs:' + songContent);
 	const songs = JSON.parse(songContent);
-	res.send({ songs: songs });
+	console.log('Got id:' + req.body.id);
+	console.log('Got songs for id:' + songs[req.body.id]);
+	res.send({ songs: songs[req.body.id] });
 };

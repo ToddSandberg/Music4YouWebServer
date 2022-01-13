@@ -8,7 +8,7 @@ module.exports = function(app) {
     .put(songsController.saveSongs);
 
   app.route('/getSongs')
-    .get(songsController.getSongs);
+    .put(songsController.getSongs);
 
   app.route('/login')
     .put(loginApp.login);
