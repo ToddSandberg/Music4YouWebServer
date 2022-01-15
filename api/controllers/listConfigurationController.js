@@ -5,7 +5,7 @@ const fs = require('fs');
 const listConfigurationFileName = 'listConfigurations';
 
 exports.saveListConfiguration = function(req, res) {
-	const id = JSON.stringify(req.body.id);
+	const id = req.body.id;
 	const allListConfigurations = JSON.parse(fs.readFileSync(listConfigurationFileName, 'utf8'));
 	allListConfigurations[id] = req.body.listConfiguration;
 	const listConfigurationString = JSON.stringify(allListConfigurations);
