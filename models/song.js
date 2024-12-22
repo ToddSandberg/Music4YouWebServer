@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     id: DataTypes.STRING,
     score: DataTypes.NUMBER,
     color: DataTypes.STRING,
+    ratings: DataTypes.JSON,
     tableId: DataTypes.STRING
   }, {
     sequelize,

@@ -22,13 +22,16 @@ module.exports = {
         type: Sequelize.STRING
       },
       score: {
-        type: Sequelize.NUMBER
+        type: Sequelize.DECIMAL
       },
       color: {
         type: Sequelize.STRING
       },
       tableId: {
         type: Sequelize.STRING
+      },
+      ratings: {
+        type: Sequelize.JSON
       },
       createdAt: {
         allowNull: false,
